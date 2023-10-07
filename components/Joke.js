@@ -1,0 +1,19 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
+export default function Joke({ joker, btnText }) {
+  return (
+    <>
+      <h1>{joker.setup}</h1>
+      <h2>{btnText !== 'Get A Punchline' ? joker.delivery : ''}</h2>
+    </>
+  );
+}
+
+Joke.propTypes = {
+  joker: PropTypes.shape({
+    setup: PropTypes.string,
+    delivery: PropTypes.string,
+  }).isRequired,
+  btnText: PropTypes.string.isRequired,
+};
